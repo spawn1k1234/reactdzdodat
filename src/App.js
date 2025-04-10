@@ -4,6 +4,7 @@ import TodoEditor from './components/TodoEditor';
 import Filter from './components/Filter';
 import Info from './components/Info';
 
+
 class App extends Component {
   state = {
     todos: [],
@@ -61,8 +62,10 @@ class App extends Component {
       <div>
         <h1>Список Заданий</h1>
         <Info total={todos.length} completed={completedTodos} />
+        <div>
+          <TodoEditor onAdd={this.handleAddTodo} />
+        </div>
         <Filter value={filter} onChange={this.handleFilterChange} />
-        <TodoEditor onAdd={this.handleAddTodo} />
         <TodoList
           todos={filteredTodos}
           onToggle={this.handleToggleCompleted}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyledInput, StyledButon } from '../styles';
+import { FormWrapper, StyledInput, StyledButton } from '../styles';
+
 
 class TodoEditor extends Component {
   state = {
@@ -20,15 +21,17 @@ class TodoEditor extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+        <FormWrapper onSubmit={this.handleSubmit}>
         <StyledInput
-          type="text"
-          value={this.state.textValue}
-          onChange={this.handleInputChange}
-          placeholder="новая задания"
+            type="text"
+            value={this.state.textValue}
+            onChange={this.handleInputChange}
+            placeholder="Нова задача"
         />
-        <StyledButon type="submit">добавить</StyledButon>
-      </form>
+  <StyledButton className="green" type="submit">Create</StyledButton>
+</FormWrapper>
+
+
     );
   }
 }
